@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Yashita",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -100, "left": 100, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 100, "left": 200, "attrs": {} },
+    { "type": "wokwi-ssd1306", "id": "oled1", "top": -100, "left": -200, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "buz1", "top": 150, "left": -200, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:SDA", "esp32:D15", "green", [] ],
+    [ "dht1:VCC", "esp32:3V3", "red", [] ],
+    [ "dht1:GND", "esp32:GND", "black", [] ],
+    [ "pot1:SIG", "esp32:D34", "yellow", [] ],
+    [ "pot1:VCC", "esp32:3V3", "red", [] ],
+    [ "pot1:GND", "esp32:GND", "black", [] ],
+    [ "oled1:SDA", "esp32:D21", "blue", [] ],
+    [ "oled1:SCL", "esp32:D22", "purple", [] ],
+    [ "oled1:VCC", "esp32:3V3", "red", [] ],
+    [ "oled1:GND", "esp32:GND", "black", [] ],
+    [ "buz1:1", "esp32:D26", "orange", [] ],
+    [ "buz1:2", "esp32:GND", "black", [] ]
+  ]
+}
